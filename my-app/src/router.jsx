@@ -6,32 +6,76 @@ import {
   Link
 } from "react-router-dom";
 
+import Func from './dat';
+import './App.css';
+import To from './todo';
+
+import Stopwatch from './stopwatch';
+import Counter from './counter';
+import State from './form.jsx';
+import Body from './body.jsx';
+import LifeCycle from './lifecycle.js';
+import Calci from './calculator.jsx';
+import UseEffect from './useEffect';
+
+import Shivam from './functional.jsx';
+import Ui from './project/ui';
+import Memo from'./reactMemo';
+import UseMemo from './useMemo'
+import UseCallBack from "./useCallBack";
+
+
+
 export default function Route1() {
   return (
     <Router>
-      <div>
+      
        
-              <Link to="/">gfd</Link><br/>
+              <Link to="/">Home</Link> &nbsp;&nbsp;&nbsp;
            
-              <Link to="/about">fdfs</Link><br/>
-           
-              <Link to="/users">fdfsd</Link>
-          
+              <Link to="/table">Table</Link> &nbsp;&nbsp;&nbsp;
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
+              <Link to="/counter">Counter</Link> &nbsp;&nbsp;&nbsp;
+           
+              <Link to="/form">Form</Link> &nbsp;&nbsp;&nbsp;
+
+              <Link to="/stopwatch">Stopwatch</Link> &nbsp;&nbsp;&nbsp;
+
+              <Link to="/todo">To-Do List</Link> &nbsp;&nbsp;&nbsp;
+
+              <Link to="/calci">Calculator</Link> &nbsp;&nbsp;&nbsp;
+
+              <Link to="/crud">C-R-U-D</Link> &nbsp;&nbsp;&nbsp;
+     
         <Switch>
-          <Route path="/about">
-            <h1>hi</h1>
+          <Route exact path="/">
+           <h1> hello</h1>
           </Route>
-          {/* <Route path="/users">
-            <Users />
+          <Route exact path="/table">
+            <Func/>
           </Route>
-          <Route path="/">
-            <Home />
-          </Route> */}
+          <Route exact path="/counter">
+            <Counter/>
+          </Route>
+          <Route exact path="/form">
+          <State/>
+          </Route>
+          <Route exact path="/stopwatch">
+          <Stopwatch/>
+          </Route>
+          <Route exact path="/todo">
+           <To/>
+          </Route>
+
+          <Route exact path="/calci">
+          <Calci/>
+          </Route>
+          <Route exact path="/crud">
+          <Ui/>
+          </Route>
         </Switch>
-      </div>
+      
+      
     </Router>
   );
 }
@@ -41,7 +85,7 @@ export default function Route1() {
 // }
 
 // function About() {
-//   return <h2>About</h2>;
+//   return( <h2>About</h2>);
 // }
 
 // function Users() {

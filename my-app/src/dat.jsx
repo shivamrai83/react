@@ -1,10 +1,10 @@
 import React from 'react';
-import App from './App';
-function func(props){
+// import App from './App';
+import Body from './body';
+function Func(props){
     return <>
-    <body/>
-    
+    <Body/>
     </>;
 }
 
-export default func;
+export default Func;

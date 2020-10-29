@@ -22,16 +22,15 @@ export default class Counter extends React.Component {
     });
   };
   counterReset=(e)=>{
-      this.state={tick:0};
-      console.log(this.state.tick);
+      this.setState({tick:0});
   }
 
-  unmount=(e)=>{
-  this.setState({unmount:true})
-  }
-  componentWillUnmount(){
-    console.log("unmounted!");
-  }
+  // unmount=(e)=>{
+  // this.setState({unmount:true})
+  // }
+  // componentWillUnmount(){
+  //   console.log("unmounted!");
+  // }
 
   render() {
     console.log("render");
@@ -61,9 +60,9 @@ export default class Counter extends React.Component {
 
         <button onClick={(e)=>{this.counterReset();}}> Counter Reset
         </button>
-        <button onClick={(e)=>{this.unmount();}}>unmount</button>
+        {/* <button onClick={(e)=>{this.unmount();}}>unmount</button> */}
 
-        {!this.state.unmount && <h1>Welcome</h1>}
+        {/* {!this.state.unmount && <h1>Welcome</h1>} */}
       </div>
     );
   }

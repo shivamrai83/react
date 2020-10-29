@@ -10,10 +10,10 @@ return (<table>
         {
             props.shivam.map((val)=>(
                 <tr>
-                    <td>{val.id}</td>
-                    <td>{val.name}</td>
-                    <td>{val.quantitiy}</td>
-                    <td>{val.location}</td>
+                    <td>{val.id}</td>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <td>{val.name}</td>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <td>{val.quantitiy}</td>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <td>{val.location}</td>&nbsp;&nbsp;&nbsp;&nbsp;
                 </tr>
             ))
         }

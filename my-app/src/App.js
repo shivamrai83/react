@@ -1,5 +1,5 @@
 import React from 'react';
-// import func from './dat';
+import Func from './dat';
 import './App.css';
 // import To from './todo';
 // import Calci from './calculator';
@@ -13,10 +13,14 @@ import UseEffect from './useEffect';
 import Route1 from './router.jsx';
 import Shivam from './functional.jsx';
 import Ui from './project/ui';
+import Memo from'./reactMemo';
+import UseMemo from './useMemo'
+import UseCallBack from "./useCallBack";
 function App() {
  
   return (
     <div className="App">
+     
       <header className="App-header">
       {/* <Counter/> */}
         {/* <State/> */}
@@ -28,7 +32,10 @@ function App() {
         {/* <UseEffect/> */}
       {/* </header> */}
       {/* <Shivam/> */}
-      <Ui/>
+      {/* <Ui/> */}
+      {/* <Memo/> */}
+      {/* <UseCallBack/> */}
+      <Route1/>
       </header>
     </div>
   );

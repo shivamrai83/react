@@ -4,10 +4,10 @@ export default function Heading(){
     return <><thead>
         <table>
         <tr>
-        <th>Id</th>
-        <th>Name </th>
-        <th>Quantity</th>
-        <th>Location</th>
+       <th>Id</th> &nbsp;&nbsp;&nbsp;
+        <th>Name </th>&nbsp;&nbsp;&nbsp;
+        <th>Salary</th>&nbsp;&nbsp;&nbsp;
+        <th>Actions</th>&nbsp;&nbsp;&nbsp;
         </tr>
         </table>
 </thead>
