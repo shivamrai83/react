@@ -1,6 +1,6 @@
 import React from 'react';
-import heading from './head';
-import rows from './row';
+import Heading from './head';
+import Rows from './row';
 var data = [
     { id: 1, name: "bread", quantitiy: 50, location: "cupboard" },
     { id: 2, name: "milk", quantitiy: 20, location: "fridge" },
@@ -8,12 +8,14 @@ var data = [
   ];
 
 
-export default function body(){
+export default function Body(){
     return <>
     <div>
         <table>
-        <heading/>
-        <rows />
+            <Heading/>
+        <tbody>           
+            <Rows shivam={data}/>
+        </tbody>
         </table>
     </div>
     </>

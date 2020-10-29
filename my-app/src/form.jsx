@@ -21,9 +21,9 @@ export default class State extends React.Component {
       })
   };
 
-  titleChangeHandler = (e) => {
-    this.setState({ title: e.target.value });
-  };
+  // titleChangeHandler = (e) => {
+  //   this.setState({ title: e.target.value });
+  // };
 
   titleChangeHandler = (e) => {
     this.setState({ rose: true });

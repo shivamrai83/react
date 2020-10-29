@@ -11,14 +11,6 @@ export default class Counter extends React.Component {
   }
 
 
-  componentWillMount() {
-    console.log("componentWillMount");
-  }
-  componentDidMount() {
-    console.log("componentDidMount");
-  }
-
-
   counterClick = (e) => {
     this.setState((prevState) => {
       return { tick: prevState.tick + 1 };
@@ -30,11 +22,15 @@ export default class Counter extends React.Component {
     });
   };
   counterReset=(e)=>{
-      this.setState({tick:0})
+      this.state={tick:0};
+      console.log(this.state.tick);
   }
 
   unmount=(e)=>{
   this.setState({unmount:true})
+  }
+  componentWillUnmount(){
+    console.log("unmounted!");
   }
 
   render() {
@@ -65,19 +61,18 @@ export default class Counter extends React.Component {
 
         <button onClick={(e)=>{this.counterReset();}}> Counter Reset
         </button>
+        <button onClick={(e)=>{this.unmount();}}>unmount</button>
 
-        {/* {!this.state.unmount && <div><Welcome/></div>} */}
+        {!this.state.unmount && <h1>Welcome</h1>}
       </div>
     );
   }
 
-  componentDidUpdate() {
-    console.log("componentDidUpdate");
-  }
+  // componentDidUpdate() {
+  //   this.setState({
+  //   tick:10
+  //   })
+  //   }
 
-  shouldComponentUpdate() {
-    console.log("shouldComponentUpdate");
-    return true;
-    // will not update if false
-  }
+  
 }

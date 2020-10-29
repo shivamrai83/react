@@ -1,9 +1,9 @@
 import React from 'react';
+import {Component} from 'react';
+class To extends Component {
 
-class To extends React.Component {
-
-    constructor(props) {
-        super(props);
+    constructor() {//explain props
+        super();
 
         this.state = {
             task: "",
@@ -77,10 +77,5 @@ class To extends React.Component {
             </>
         )
     }
-
-
-
-
-
 }
 export default To;

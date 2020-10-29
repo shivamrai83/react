@@ -3,10 +3,12 @@ import React from 'react';
 
 
 
-export default function rows(){
-<tbody>
+export default function Rows(props){
+
+return (<table>
+        <tbody>
         {
-            props.map((val)=>(
+            props.shivam.map((val)=>(
                 <tr>
                     <td>{val.id}</td>
                     <td>{val.name}</td>
@@ -16,4 +18,6 @@ export default function rows(){
             ))
         }
 </tbody>
+</table>
+)
 }

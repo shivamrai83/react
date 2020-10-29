@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function heading(){
+export default function Heading(){
     return <><thead>
         <table>
         <tr>
