@@ -16,6 +16,7 @@ import Ui from './project/ui';
 import Memo from'./reactMemo';
 import UseMemo from './useMemo'
 import UseCallBack from "./useCallBack";
+import View from './project/view'
 function App() {
  
   return (
@@ -36,6 +37,7 @@ function App() {
       {/* <Memo/> */}
       {/* <UseCallBack/> */}
       <Route1/>
+      {/* <View/> */}
       </header>
     </div>
   );

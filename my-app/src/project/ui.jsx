@@ -1,21 +1,45 @@
 // const { useState, useEffect } = require("react");
 
 import React from 'react';
-import Heading from '../head';
-import Adduser from './adduser';
-export default function Ui(){
 
-return(
+import {
+        BrowserRouter as Router,
+        Switch,
+        Route,
+        Link
+      } from "react-router-dom";
+
+import Adduser from './adduser';
+import UiWrapper from './wrapper';
+export default function Ui(){
+       
+return( <>
+      
         <div>
-                <button >Add New User</button>
+        <Router>
+        <Link to="/add"><button >Add New User</button></Link> 
+        <Link to="/crud"></Link>
+
+        
+        <Switch>
+        <Route exact path="/add">
                 <Adduser/>
-                <div>
-                        <table>
-                                <th><Heading/></th>
-                                <tbody></tbody>
-                        </table>
-                </div>
+        </Route>
+          
+        <Route exact path="/crud">
+                < UiWrapper/>
+        </Route>
+          
+       
+        </Switch>
+           
+        </Router>
+                
+                
+               
         </div>
+       
+        </>
 );
 
 }
