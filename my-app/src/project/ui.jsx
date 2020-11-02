@@ -1,7 +1,4 @@
-// const { useState, useEffect } = require("react");
-
 import React from 'react';
-
 import {
         BrowserRouter as Router,
         Switch,
@@ -11,8 +8,8 @@ import {
 
 import Adduser from './adduser';
 import UiWrapper from './wrapper';
-export default function Ui(){
-       
+
+export default function Ui(){       
 return( <>
       
         <div>

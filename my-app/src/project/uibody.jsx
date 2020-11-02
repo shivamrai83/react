@@ -1,5 +1,6 @@
 import { getByTestId } from '@testing-library/react';
 import React from 'react';
+import { useState } from 'react';
 import {
         BrowserRouter as Router,
         Switch,
@@ -10,20 +11,27 @@ import Action from './action';
 import View from "./view";
 
 
+
 export default function Uibody(){
 var arr=JSON.parse(localStorage.getItem("arr"));
+const [del,setDel]=useState(false);
 
 function getId(k){
         
         console.log(k);
+        const delet = prompt("Are u sure U Wanna Delete",true);
+        if(delet){
 
         var arr=JSON.parse(localStorage.getItem("arr"));
-        var ar=arr.filter((val,index)=>index!=k-1);
+        var ar=arr.filter((val,index)=>val.id!=k-1);
         
         localStorage.setItem("arr",JSON.stringify(ar));
         console.log(localStorage.getItem("arr"));
+        setDel(delet);
 
-        // goView(k);
+}
+
+       
 }
 // function deleteId(id){
 //             var arr = arr.filter(item => item.id !== id);
@@ -65,9 +73,7 @@ return(<>
                                 })
 
                                 }
-                                {/* {function goView(ka){
-                                        <View/>
-                                }} */}
+                               
                         </table>
                 </div>
         </div>
