@@ -1,11 +1,13 @@
 import { getByTestId } from '@testing-library/react';
 import React from 'react';
+import { useEffect } from 'react';
 import { useState } from 'react';
 import {
         BrowserRouter as Router,
         Switch,
         Route,
-        Link
+        Link,
+        useHistory
       } from "react-router-dom";
 import Action from './action';
 import View from "./view";
@@ -15,45 +17,40 @@ import View from "./view";
 export default function Uibody(){
 var arr=JSON.parse(localStorage.getItem("arr"));
 const [del,setDel]=useState(false);
+const history=useHistory()
 
-function getId(k){
+function getIdToDelete(k){
         
         console.log(k);
         const delet = prompt("Are u sure U Wanna Delete",true);
         if(delet){
-
         var arr=JSON.parse(localStorage.getItem("arr"));
-        var ar=arr.filter((val,index)=>val.id!=k-1);
+        var ar=arr.filter((val)=>val.id!=k);
         
         localStorage.setItem("arr",JSON.stringify(ar));
-        console.log(localStorage.getItem("arr"));
-        setDel(delet);
-
+        setDel(del=>!del);
+        
+        }       
+      
 }
 
-       
+function viewpage(){
+        history.push("/view");
+      
 }
-// function deleteId(id){
-//             var arr = arr.filter(item => item.id !== id);
-//             localStorage.setItem("arr",arr);
-// }
+
 
 return(<>
         <Router>
-        <Link to="/"></Link> 
-        <Link></Link>
+        <Link to="/view"></Link> 
 
         <Switch>
-        <Route exact path="/">
-        <Uibody/>
-        </Route>
-          
+      
         <Route exact path="/view">
-                <View/>
+        <View/>
         </Route>
         </Switch>
            
-       
         <div>
                 <div>
                         <table>
@@ -64,9 +61,9 @@ return(<>
                                         <td>{val.salary}</td>
                                         <td>
                                         <div>
-                                       <button onClick={()=>{getId(val.id)}}>view</button>
+                                        <button onClick={()=>{viewpage()}}>view</button>
                                         <button>update</button>
-                                        <button >delete</button>
+                                        <button onClick={()=>{getIdToDelete(val.id)}}>delete</button>
                                         </div>
                                         </td>
                                         </div>

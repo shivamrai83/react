@@ -17,6 +17,7 @@ import Memo from'./reactMemo';
 import UseMemo from './useMemo'
 import UseCallBack from "./useCallBack";
 import View from './project/view'
+// import History from "./useHistory";
 function App() {
  
   return (
@@ -38,6 +39,7 @@ function App() {
       {/* <UseCallBack/> */}
       <Route1/>
       {/* <View/> */}
+      {/* <History/> */}
       </header>
     </div>
   );

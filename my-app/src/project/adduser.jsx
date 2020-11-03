@@ -1,18 +1,24 @@
 
-import React, {Component, useState} from 'react';
+import React, {Component, useState, useEffect} from 'react';
 import { useHistory } from 'react-router-dom';
 
 
 export default function Adduser(){
-
-const arr=JSON.parse(localStorage.getItem("arr"));
-const i=arr.length;
-const[id,setId]=useState(i);
 const[name, setName]=useState("");
 const[salary, setSalary]=useState(0);
+const[id,setId]=useState(0);
 
-// export const ContextArray=React.createContext();
-
+useEffect(()=>{
+const arr=JSON.parse(localStorage.getItem("arr"));
+if(arr.length!==0){
+const i=arr[arr.length-1].id;
+console.log("mounted id is:",i);
+setId(i);
+}
+else{
+setId(0);
+}
+},[])
 
 var history=useHistory();
 function addUser(){
@@ -29,7 +35,7 @@ function addUser(){
     setName(" ");
     setSalary(0);
    setId(id+1);
-   history.push("/add")
+   history.push("/crud");
 //    localStorage.clear();
 //    localStorage.setItem("arr",JSON.stringify([]));
 }
@@ -37,12 +43,11 @@ function addUser(){
 
 return(
         <>
-
                 Name:<input type="text" name="name" value={name} onChange={(e)=>{setName(e.target.value)}} /><br/>
                 Salary:<input type="text" name="salary" value={salary} onChange={(e)=>{setSalary(e.target.value)}} /><br/>
                 <button onClick={()=>{addUser()}}>Add User</button>
-                <button onClick={()=>{getUser()}}>Get user</button>
-             </>  
+                <button>Get user</button>
+        </>  
 );
 
 }
