@@ -18,6 +18,7 @@ import UseMemo from './useMemo'
 import UseCallBack from "./useCallBack";
 import View from './project/view'
 // import History from "./useHistory";
+import Ref from "./ref"
 function App() {
  
   return (
@@ -40,6 +41,7 @@ function App() {
       <Route1/>
       {/* <View/> */}
       {/* <History/> */}
+      {/* <Ref/> */}
       </header>
     </div>
   );

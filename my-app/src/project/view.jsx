@@ -1,33 +1,32 @@
 import React, { useEffect } from 'react';
+import {
+    useHistory,
+    useParams
+  } from "react-router-dom";
 
-
-export default function View(props){
+export default function ViewValues() {
    
-
+        let { id } = useParams();
     var arr=JSON.parse(localStorage.getItem("arr"));
-    console.log(arr);
-    var s=props.valu;
-    console.log(s+"s");
-    var view=arr.filter((val)=>s==val.id);
-    console.log(view); 
-
+    var ar=arr.filter((val)=>val.id==id);
+    const history = useHistory();
    
-return(<>
-        <h1>shivam</h1>
-        <div>
-           {view.map((v)=>{
-            return(
-                <div>
-                    <td>v.id</td>
-                    <td>v.name</td>
-                    <td>v.salary</td>                   
-                </div>
-            )            
-            }  
-               
-           )}
-        </div>
-        <button>goback</button>
-        </>
-);
-}
+    return (
+      <div>
+              {ar.map((v)=>{
+                      return (
+                              <div>
+                                      <tr>ID: {v.id}</tr>
+                                      <tr>Name: {v.name}</tr>
+                                      <tr>Sal: {v.salary}</tr>
+                                      <button onClick={()=>{  history.push("/crud");}}>done viewing</button>
+                              </div>
+                      )
+
+              })
+
+              }
+           
+      </div>
+    );
+  }

@@ -7,63 +7,55 @@ import {
         Switch,
         Route,
         Link,
-        useHistory
+        useHistory,
+        useParams
       } from "react-router-dom";
-import Action from './action';
-import View from "./view";
-
+import UpdateValues from './updatevalues';
+import ViewValues from "./view";
+import Btn from "./btn";
 
 
 export default function Uibody(){
-var arr=JSON.parse(localStorage.getItem("arr"));
-const [del,setDel]=useState(false);
-const history=useHistory()
+        var arr = JSON.parse(localStorage.getItem("arr"));
+  const [del, setDel] = useState(false);
+  const history = useHistory();
 
-function getIdToDelete(k){
-        
-        console.log(k);
-        const delet = prompt("Are u sure U Wanna Delete",true);
-        if(delet){
-        var arr=JSON.parse(localStorage.getItem("arr"));
-        var ar=arr.filter((val)=>val.id!=k);
-        
-        localStorage.setItem("arr",JSON.stringify(ar));
-        setDel(del=>!del);
-        
-        }       
-      
-}
+  function getIdToDelete(k) {
+    console.log(k);
+    const delet = prompt("Are u sure U Wanna Delete", true);
+    if (delet) {
+      var arr = JSON.parse(localStorage.getItem("arr"));
+      var ar = arr.filter((val) => val.id != k);
 
-function viewpage(){
-        history.push("/view");
-      
-}
+      localStorage.setItem("arr", JSON.stringify(ar));
+      setDel((del) => !del);
+    }
+  }
 
-
+  
 return(<>
         <Router>
-        <Link to="/view"></Link> 
+        <Link to="/view "></Link> 
 
-        <Switch>
-      
-        <Route exact path="/view">
-        <View/>
-        </Route>
-        </Switch>
-           
+        <Switch>      
+        <Route exact path="/view/:id" children={<ViewValues />}></Route>
+        
+        <Route exact path="/update/:id" children={<UpdateValues />}></Route>
+        </Switch>   
         <div>
                 <div>
                         <table>
                                 {arr.map((val)=>{
+                                       
                                        return <div>
                                         <td>{val.id}</td>
                                         <td>{val.name}</td>
                                         <td>{val.salary}</td>
                                         <td>
                                         <div>
-                                        <button onClick={()=>{viewpage()}}>view</button>
-                                        <button>update</button>
-                                        <button onClick={()=>{getIdToDelete(val.id)}}>delete</button>
+                                        <Link to={`/view/${val.id}`}><button>view</button> </Link>
+                                        <Link to={`/update/${val.id}`}><button>update</button> </Link>
+                                        <button onClick={() => { getIdToDelete(val.id); }} > delete</button>
                                         </div>
                                         </td>
                                         </div>
@@ -79,3 +71,4 @@ return(<>
 );
 
 }
+

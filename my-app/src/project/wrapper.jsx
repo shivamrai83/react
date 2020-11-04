@@ -13,24 +13,12 @@ export default function UiWrapper(){
 
     return (
         <>
-         <Router>
-        <Link to="/view"></Link> 
-        <Switch>
-                
-        <Route exact path="/view">
-                <View/>
-        </Route>
-          
-       
-       
-        </Switch>
-           
-        </Router>
-        <div>
+        
+                <div>
                         <table>
                                 <th><Heading/></th>
                                 <tbody>
-                                        <Uibody/>                                                                            
+                                  <Uibody/>                                                               
                                 </tbody>
                                 <button>check arr</button>
 
