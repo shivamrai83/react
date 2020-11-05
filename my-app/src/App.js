@@ -19,6 +19,7 @@ import UseCallBack from "./useCallBack";
 import View from './project/view'
 // import History from "./useHistory";
 import Ref from "./ref"
+import Rout from './shopping/route';
 function App() {
  
   return (
@@ -38,10 +39,11 @@ function App() {
       {/* <Ui/> */}
       {/* <Memo/> */}
       {/* <UseCallBack/> */}
-      <Route1/>
+      {/* <Route1/> */}
       {/* <View/> */}
       {/* <History/> */}
       {/* <Ref/> */}
+      <Rout/>
       </header>
     </div>
   );

@@ -13,7 +13,10 @@ import {
 import UpdateValues from './updatevalues';
 import ViewValues from "./view";
 import Btn from "./btn";
+import Ui from './ui';
 
+
+// export const RouteID = React.createContext();
 
 export default function Uibody(){
         var arr = JSON.parse(localStorage.getItem("arr"));
@@ -46,15 +49,20 @@ return(<>
                 <div>
                         <table>
                                 {arr.map((val)=>{
-                                       
+                                        const viu=`/view/${val.id}`;
+                                        const udat=`/update/${val.id}`;
                                        return <div>
                                         <td>{val.id}</td>
                                         <td>{val.name}</td>
                                         <td>{val.salary}</td>
                                         <td>
                                         <div>
-                                        <Link to={`/view/${val.id}`}><button>view</button> </Link>
-                                        <Link to={`/update/${val.id}`}><button>update</button> </Link>
+                                       
+                                        {/* <RouteID value={{viu, udat}}> */}
+                                       
+                                        <Link to={viu}><button>view</button> </Link>
+                                        <Link to={udat}><button>update</button> </Link>
+                                        {/* </RouteID> */}
                                         <button onClick={() => { getIdToDelete(val.id); }} > delete</button>
                                         </div>
                                         </td>

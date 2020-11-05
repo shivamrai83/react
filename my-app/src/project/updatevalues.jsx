@@ -35,7 +35,7 @@ export default function UpdateValues(){
     console.log(changearr);
     console.log(pusharr);
       localStorage.setItem("arr",JSON.stringify(changearr));
-      history.push("/crud");
+      history.push("/");
     }
 return (
 <div>
